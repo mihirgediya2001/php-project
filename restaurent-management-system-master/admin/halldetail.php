@@ -1,0 +1,216 @@
+<?php
+include('../dbcon.php');
+include('../bootstrap.php');
+include('header4.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Room</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist\css\bootstrap.min">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+    .admin-room-details{
+        background:rgba(255,255,255,0.5); 
+        
+    }
+    .admin-room-details h1{
+        text-align:center;
+        margin-top: 20px;
+    }
+    body::before{
+    position: absolute;
+    content: "";
+    height: 220%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    background: url('../img/w3.jpg') center center/cover no-repeat;
+    }
+    .admin-booking table tr{
+        font-size:20px;
+        font-family: 'Rubik', sans-serif;
+    }
+</style>
+<body>
+
+    <div class="table-responsive">
+         <h1 style="color:#b14eab; text-align:center;">Marriage Hall details</h1>
+         <table class="table">
+             <tr align="center">
+                     <th width="25%" height="50px">Hall no</th>
+                     <th width="25%" height="50px">Hall Type</th>
+                     <th width="25%" height="50px">Price</th>
+                     <th width="25%" height="50px">Status</th>
+                     <th width="25%" height="50px">Option</th>
+             </tr>
+             <?php
+                $qry="SELECT * FROM `hall` where  hallyype='Marriage'";
+                $run=mysqli_query($sql,$qry);
+                while( $row=mysqli_fetch_assoc($run))
+                {
+                    $hno=$row['hno'];
+                    $hallyype=$row['hallyype'];
+                    $price=$row['price'];
+                    $status=$row['status'];
+
+                    ?>
+                    <tr>
+                    <td width="25%" height="50px"><center><?php echo $hno ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $hallyype ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $price ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $status ?></center></td>
+                     <td><a style="color:#b14eab;" href="co1.php? rno=<?php echo $hallyype; ?>">Check Out</a></td>
+                    </tr>
+                    <?php
+                }
+             ?>
+         </table>
+    </div>
+
+    <div class="table-responsive">
+         <h1 style="color:#b14eab; text-align:center;">birthday Hall details</h1>
+         <table class="table">
+         <tr align="center">
+                     <th width="25%" height="50px">Hall no</th>
+                     <th width="25%" height="50px">Hall Type</th>
+                     <th width="25%" height="50px">Price</th>
+                     <th width="25%" height="50px">Status</th>
+                     <th width="25%" height="50px">Option</th>
+             </tr>
+             <?php
+                $qry="SELECT * FROM `hall` where  hallyype='Birthday'";
+                $run=mysqli_query($sql,$qry);
+                while( $row=mysqli_fetch_assoc($run))
+                {
+                    $hno=$row['hno'];
+                    $hallyype=$row['hallyype'];
+                    $price=$row['price'];
+                    $status=$row['status'];
+
+                    ?>
+                    <tr>
+                    <td width="25%" height="50px"><center><?php echo $hno ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $hallyype ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $price ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $status ?></center></td>
+                     <td><a style="color:blue;" href="co1.php? rno=<?php echo $hallyype; ?>">Check Out</a></td>
+                    </tr>
+
+                    <?php
+                }
+             ?>
+         </table>
+    </div>
+    <div class="table-responsive">
+         <h1 style="color:#b14eab; text-align:center;">Anniversary Hall details</h1>
+         <table class="table">
+         <tr align="center">
+                     <th width="25%" height="50px">Hall no</th>
+                     <th width="25%" height="50px">Hall Type</th>
+                     <th width="25%" height="50px">Price</th>
+                     <th width="25%" height="50px">Status</th>
+                     <th width="25%" height="50px">Option</th>
+             </tr>
+             <?php
+                $qry="SELECT * FROM `hall` where  hallyype='Anniversary'";
+                $run=mysqli_query($sql,$qry);
+                while( $row=mysqli_fetch_assoc($run))
+                {
+                    $hno=$row['hno'];
+                    $hallyype=$row['hallyype'];
+                    $price=$row['price'];
+                    $status=$row['status'];
+
+                    ?>
+                    <tr>
+                    <td width="25%" height="50px"><center><?php echo $hno ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $hallyype ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $price ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $status ?></center></td>
+                     <td><a style="color:blue;" href="co1.php? rno=<?php echo $hallyype; ?>">Check Out</a></td>
+                    </tr>
+
+                    <?php
+                }
+             ?>
+         </table>
+    </div>
+    <div class="table-responsive">
+         <h1 style="color:#b14eab; text-align:center;">Baby Shower Hall Details</h1>
+         <table class="table">
+         <tr align="center">
+                     <th width="25%" height="50px">Hall no</th>
+                     <th width="25%" height="50px">Hall Type</th>
+                     <th width="25%" height="50px">Price</th>
+                     <th width="25%" height="50px">Status</th>
+                     <th width="25%" height="50px">Option</th>
+             </tr>
+             <?php
+                $qry="SELECT * FROM `hall` where  hallyype='Baby shower'";
+                $run=mysqli_query($sql,$qry);
+                while( $row=mysqli_fetch_assoc($run))
+                {
+                    $hno=$row['hno'];
+                    $hallyype=$row['hallyype'];
+                    $price=$row['price'];
+                    $status=$row['status'];
+
+                    ?>
+                    <tr>
+                    <td width="25%" height="50px"><center><?php echo $hno ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $hallyype ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $price ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $status ?></center></td>
+                     <td><a style="color:blue;" href="co1.php? rno=<?php echo $hallyype; ?>">Check Out</a></td>
+                    </tr>
+
+                    <?php
+                }
+             ?>
+         </table>
+    </div>
+
+    <div class="table-responsive">
+         <h1 style="color:#b14eab; text-align:center;">Engagement Hall details</h1>
+         <table class="table">
+         <tr align="center">
+                     <th width="25%" height="50px">Hall no</th>
+                     <th width="25%" height="50px">Hall Type</th>
+                     <th width="25%" height="50px">Price</th>
+                     <th width="25%" height="50px">Status</th>
+                     <th width="25%" height="50px">Option</th>
+             </tr>
+             <?php
+                $qry="SELECT * FROM `hall` where  hallyype='engagement'";
+                $run=mysqli_query($sql,$qry);
+                while( $row=mysqli_fetch_assoc($run))
+                {
+                    $hno=$row['hno'];
+                    $hallyype=$row['hallyype'];
+                    $price=$row['price'];
+                    $status=$row['status'];
+
+                    ?>
+                    <tr>
+                    <td width="25%" height="50px"><center><?php echo $hno ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $hallyype ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $price ?></center></td>
+                     <td width="25%" height="50px"><center><?php echo $status ?></center></td>
+                     <td><a style="color:blue;" href="co1.php? rno=<?php echo $hallyype; ?>">Check Out</a></td>
+                    </tr>
+
+                    <?php
+                }
+             ?>
+         </table>
+    </div>
+   
+</body>
+</html>
