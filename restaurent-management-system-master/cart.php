@@ -182,3 +182,7 @@ function find_qty($id)
 </body>
 
 </html>
+
+
+<?php include('footer.php');
+?>

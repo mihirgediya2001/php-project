@@ -19,7 +19,7 @@
     <footer>
         <div class="content ">
             <div class="link-boxes">
-                <ul class="box">
+                <ul class="boxf">
                     <li class="link_name">
                         ABOUT US
                     </li>
@@ -30,7 +30,7 @@
                     </li>
                 </ul>
 
-                <ul class=" box">
+                <ul class=" boxf">
                     <li class="link_name">USEFUL LINKS</li>
                     <li><a href="room.php">Rooms</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
@@ -38,7 +38,7 @@
                     <li><a href="booking.php">Booking</a></li>
                     <li><a href="index.php">Home</a></li>
                 </ul>
-                <ul class="box">
+                <ul class="boxf">
                     <li class="link_name">OPENING HOURS</li>
                     <li>Monday: 7am - 12pm</li>
                     <li>Tuesday - Wednesday: 7am - 12 pm</li>
@@ -46,7 +46,7 @@
                     <li>Saturday: 7am - 12 pm</li>
 
                 </ul>
-                <ul class="box">
+                <ul class="boxf">
                     <li class="link_name">
                         CONTACT INFO
                     </li>
@@ -58,8 +58,9 @@
         </div>
         <div class="bottom-details">
             <div class="bottom_text">
-                <span class="copyright_text">Copyright © 2023 <a href="#">Mili.</a>All rights reserved</span>
-                <span class="policy_terms">
+                <span class="copyright_text">
+                    <a href="#">Copyright © 2023 Mili.</a>
+                    <a href="#">All rights reserved</a>
                     <a href="#">Privacy policy</a>
                     <a href="#">Terms & condition</a>
                 </span>
@@ -69,4 +70,3 @@
 
 
 </body>
-<!-- TODO -->
