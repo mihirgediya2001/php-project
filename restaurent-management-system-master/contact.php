@@ -92,7 +92,7 @@ include('header.php');
                             <span>Message</span>
                         </div>
 
-                        <button type="submit" class="enter">Enter</button>
+                        <button type="submit" name="con-btn" class="enter">Enter</button>
 
                     </div>
                 </form>
@@ -105,10 +105,9 @@ include('header.php');
                    $con_name=$_POST['name'];
                    $con_email=$_POST['email'];
                    $con_mobile=$_POST['phone'];
-                   $con_address=$_POST['address'];
                    $con_message=$_POST['message'];
 
-                   $qry="INSERT INTO contact(name,email,mobile,address,message) VALUES ('$con_name','$con_email','$con_mobile','$con_address','$con_message')";
+                   $qry="INSERT INTO contact(name,email,mobile,message) VALUES ('$con_name','$con_email','$con_mobile','$con_message')";
 
                    $run=mysqli_query($sql,$qry);
                    if($run)

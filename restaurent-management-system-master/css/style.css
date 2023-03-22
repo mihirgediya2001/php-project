@@ -505,7 +505,6 @@
 .paras form {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     padding: 3px;
 }
 .paras form input {
@@ -813,6 +812,11 @@ table tr td input {
 
 #book-btn:hover a {
     color: black !important;
+}
+
+.book-form {
+    display: flex;
+    justify-content: center;
 }
 /* contact page */
 
@@ -1245,7 +1249,7 @@ input[name='gen'] {
 
 .carousel-image {
     height: auto;
-    max-height: 600px;
+    max-height: 550px;
 }
 
 /* WAVES BENEATH HEADER */
