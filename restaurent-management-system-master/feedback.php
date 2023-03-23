@@ -1,6 +1,6 @@
 <?php
-include('header.php');
-include('dbcon.php');
+include 'header.php';
+include 'dbcon.php';
 ?>
 
 
@@ -47,25 +47,15 @@ include('dbcon.php');
 </form>
 
 <?php
-       if(isset($_POST['submit']))
-       {
-           $name = $_POST['name'];
-           $feedback=$_POST['feedback'];
+if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $feedback = $_POST['feedback'];
 
-           $qry="INSERT INTO feedback (name,feedback) VALUES ('$name','$feedback')";
-           $run=mysqli_query($sql,$qry);
+    $qry = "INSERT INTO feedback (name,feedback) VALUES ('$name','$feedback')";
+    $run = mysqli_query($sql, $qry);
 
-           if($run==true)
-           {
-               ?>
-               <script>
-                    $('#saved').modal('show');  
-               </script>
-               <?php
-           }
-            
-       }
-    ?>
+}
+?>
 
 
 <div class="modal fade" id="saved" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -92,5 +82,5 @@ include('dbcon.php');
 
 
 <?php
-include('footer.php');
+include 'footer.php';
 ?>

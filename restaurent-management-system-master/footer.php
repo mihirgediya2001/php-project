@@ -9,10 +9,10 @@
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#bcccf6" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#9ab3f1" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="#799AED" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#5680e9" />
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="#edecf2" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="#dcd9e6" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="#c2bcd3" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#a9a0c1" />
             </g>
         </svg>
     </div>

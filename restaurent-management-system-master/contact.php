@@ -1,6 +1,6 @@
 <?php
-include('dbcon.php');
-include('header.php');
+include 'dbcon.php';
+include 'header.php';
 ?>
 
 <html>
@@ -69,7 +69,7 @@ include('header.php');
                     <h1>Don't Hesitate To Contact Us</h1>
                 </div>
 
-                <form action="contact.php" method="post">
+                <form id="myform" action="contact.php" method="post">
                     <div class="cardc box-shadow-all">
                         <a class="singup">Sign Up</a>
                         <div class="inputBox1">
@@ -91,48 +91,50 @@ include('header.php');
                             <input type="textarea" name="message" value="" required="required">
                             <span>Message</span>
                         </div>
-
-                        <button type="submit" name="con-btn" class="enter">Enter</button>
+                        <button id="submit" type="button" data-toggle="modal" data-target="#saved" name="x" class="enter">Submit</button>
 
                     </div>
                 </form>
 
             </div>
         </div>
-        <?php
-               if(isset($_POST['con-btn']))
-               {
-                   $con_name=$_POST['name'];
-                   $con_email=$_POST['email'];
-                   $con_mobile=$_POST['phone'];
-                   $con_message=$_POST['message'];
-
-                   $qry="INSERT INTO contact(name,email,mobile,message) VALUES ('$con_name','$con_email','$con_mobile','$con_message')";
-
-                   $run=mysqli_query($sql,$qry);
-                   if($run)
-                   {
-                       ?>
-        <script>
-        alert("Thanks For Contacting Us");
-        </script>
-        <?php
-                   }
-                   else{
-
-                   }
-                  
-               }
-            ?>
-
-
-
     </div>
 </body>
 
+<?php
+if (isset($_POST['submit'])) {
+    $con_name = $_POST['name'];
+    $con_email = $_POST['email'];
+    $con_mobile = $_POST['phone'];
+    $con_message = $_POST['message'];
+
+    $qry = "INSERT INTO contact(name,email,mobile,message) VALUES ('$con_name','$con_email','$con_mobile','$con_message')";
+
+    $run = mysqli_query($sql, $qry);
+
+}
+?>
 
 </html>
 
+<div class="modal fade" id="saved" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Will contant you soon :)
+            </div>
+            <div class="modal-footer">
+                <button form="myform" type="submit" class="btn btn-secondary" name="submit">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<?php include('footer.php');
+<?php include 'footer.php';
 ?>
