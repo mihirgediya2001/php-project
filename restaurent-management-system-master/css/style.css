@@ -303,6 +303,11 @@
     vertical-align: middle !important;
 }
 
+.modal-footer a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
 .cart-btns .btn {
     height: 50px;
     padding-left: 13px;
@@ -853,7 +858,7 @@ table tr td input {
     justify-content: center;
     align-items: center;
     min-height: 350px;
-    width: 300px;
+    width: 50%;
     flex-direction: column;
     gap: 35px;
     border-radius: 15px;
@@ -861,6 +866,12 @@ table tr td input {
     margin: auto;
     margin-bottom: 20px;
     border-radius: 8px;
+}
+
+@media (max-width: 668px) {
+    .cardc {
+        width: 90%;
+    }
 }
 
 .inputBox,
@@ -880,8 +891,10 @@ table tr td input {
     background: transparent;
     border-left: 2px solid #000;
     border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
     transition: 0.1s;
     border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .inputBox span,
@@ -1210,7 +1223,7 @@ input[name='gen'] {
     cursor: pointer;
 }
 
-.modal-footer {
+.footer-login {
     flex-direction: column-reverse;
     align-items: stretch !important;
 }

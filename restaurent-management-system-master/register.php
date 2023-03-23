@@ -31,7 +31,7 @@
                 <input type="text" placeholder="Mobile No" name="mno" required>
                 <input type="text" placeholder="Adhar Card No" name="adno" required>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer footer-login">
 
                 <div class="btns-1">
                     <button type="button" class="btn register-btn" data-dismiss="modal">Close</button>

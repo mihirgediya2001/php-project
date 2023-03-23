@@ -28,8 +28,6 @@
 </body>
 </html> -->
 
-
-
 <head lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,7 +72,7 @@ include('dbcon.php');
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block carousel-image w-100" src="img/hal1.jpg" alt="First slide">
+                <img class="d-block carousel-image w-100" src="img/hal2.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
                 <img class="d-block carousel-image w-100" src="img/hal4.jpg" alt="Second slide">
@@ -124,10 +122,10 @@ include('dbcon.php');
                 <p class="sectionsubTag font">Status : <?php echo $row['status']?></p>
                 <p class="price">Price per room : <?php echo $row['price']?>Rs</p>
                 <form action="loginCheckR2.php" method="get">
-                    <input type="submit" class="price-btn">
+                    <input type="submit" class="price-btn" value="Book Now" />
                 </form>
             </div>
-            <div class="box-shadow-all">
+            <div class=" box-shadow-all">
                 <img class="rooms-img" src="<?php echo getBaseUrl().'/uploads/'. $row['image']?>" alt="delux" />
             </div>
         </div>

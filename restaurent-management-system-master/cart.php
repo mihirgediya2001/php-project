@@ -140,7 +140,7 @@ function find_qty($id)
 						else{
 							?>
                                 <tr>
-                                    <td colspan="4" class="text-center">No Item in Cart</td>
+                                    <td colspan="5" class="text-center">No Item in Cart</td>
                                 </tr>
                                 <?php
 						}
@@ -160,12 +160,13 @@ function find_qty($id)
                         </a>
                         <button type="submit" class="two btn btn-outline-success box-shadow-all" name="save">
                             <i class="fa fa-save"></i> Save Changes</button>
-                        <a href="cart/clear_cart.php" class="three btn btn-outline-danger box-shadow-all">
+                        <button type="button" data-toggle="modal" data-target="#clearcartmodal" name="reset"
+                            class=" three btn btn-outline-danger box-shadow-all">
                             <i class="fa fa-trash-o"></i>
                             Clear Cart
-                        </a>
+                        </button>
                         <div class="four">
-                            <form action=" cartpayment.php" method="POST">
+                            <form action="cartpayment.php" method="POST">
                                 <a href="cartpayment.php" class="btn btn-outline-success box-shadow-all">
                                     <i class="fa fa-check"></i>
                                     Checkout
@@ -179,9 +180,30 @@ function find_qty($id)
         </div>
     </div>
 
+    <div class="modal fade" id="clearcartmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to clear the cart?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger"><a href="cart/clear_cart.php">Yes</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+
 
 
 <?php include('footer.php');

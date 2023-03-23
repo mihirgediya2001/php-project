@@ -28,19 +28,19 @@ include('header.php');
         </script>
     </head>
     <div>
-
+        <!-- TODO modal -->
         <section id="booking-hall">
             <img class="img-fluid hall-img" src="img/adminhotel2.jpg" alt=" contact" />
             <div class="top-content contact-div">
 
                 <div class=" ">
                     <div class="contact-symbol">
-                        <i class="fas fa-hamburger">Hotel VENICE</i>
+                        <i class="about-p">Hotel VENICE</i>
                     </div>
-                    <div class="book-h1">
+                    <div class="about-p">
                         <h1>BOOK YOUR <br> HOTEL TODAY</h1>
                     </div>
-                    <div class="book-p">
+                    <div class="about-p">
                         <p>Hotels.com Customer Care Number, Contact Address, Email Id. Hotels.com is an <br> Indian Most
                             Popular
                             Online Hotel Booking Platforms. Many Indian’s looking for the contact.</p>

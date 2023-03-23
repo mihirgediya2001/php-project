@@ -33,7 +33,7 @@
                 <input type="text" placeholder="E-mail or Username" name="email_username" required>
                 <input type="password" placeholder="Password" name="password" required>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer footer-login">
                 <div class="forgot-btn">
                     <button type="button" data-dismiss="modal" data-toggle="modal" data-target="#forgot">Forgot
                         Password</button>
