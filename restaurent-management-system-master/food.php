@@ -1,11 +1,11 @@
 <?php
-include('header.php');
-include_once('dbcon.php');
-include('connect.php');
+include 'header.php';
+include_once 'dbcon.php';
+include 'connect.php';
 // include ('bootstrap.php');
 // session_start();
 //initialize cart if not set or is unset
-if(!isset($_SESSION['cart'])){
+if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 }
 
@@ -36,7 +36,7 @@ if(!isset($_SESSION['cart'])){
 </head>
 
 <?php
-include('global.php');
+include 'global.php';
 
 $filtered = false;
 $value = "All Items";
@@ -65,7 +65,7 @@ if (isset($_POST['southindian'])) {
 if (isset($_POST['italian'])) {
     $GLOBALS['filtered'] = true;
     $GLOBALS['value'] = "Italian";
-    $result = display();  
+    $result = display();
     $myHeaderClass3 = "active";
     $myHeaderClass1 = "";
 }
@@ -146,8 +146,8 @@ $result = display();
 
     </div>
     <?php
-            if(isset($_SESSION['message'])){
-            ?>
+if (isset($_SESSION['message'])) {
+    ?>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-6">
             <div class="alert alert-info text-center">
@@ -156,24 +156,22 @@ $result = display();
         </div>
     </div>
     <?php
-                unset($_SESSION['message']);
-            } 
-            ?>
+unset($_SESSION['message']);
+}
+?>
 
     <section class="row-data" id="services">
 
-        <?php if ($result->num_rows > 0) 
-                {
-                    while ($row = $result->fetch_assoc())
-                    {
-                        ?>
+        <?php if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        ?>
         <div class="box box-shadow-all">
             <img class="card-img" src="<?php echo getBaseUrl() . '../uploads/' . $row['img'] ?>"
                 alt="<?php echo $row['name'] ?>">
-            <h2 class="h-secondary center"><?php echo ucfirst($row['name']);?></h2>
+            <h2 class="h-secondary center"><?php echo ucfirst($row['name']); ?></h2>
             <div class="card_body">
                 <div class="food-details">
-                    <p>Category:<strong> <?php echo $row['foodtype'];?></strong></p>
+                    <p>Category:<strong> <?php echo $row['foodtype']; ?></strong></p>
                     <p>price:<strong> <?php echo $row['price']; ?> rs</strong></p>
                     <a href="cart/add_cart.php?id=<?php echo $row['id']; ?>" class="food-btn box-shadow-all">
                         <i class="fa fa-plus"></i> Cart</a>
@@ -182,17 +180,17 @@ $result = display();
         </div>
 
         <?php
-                            }
-                        } else {
-                            ?>
+}
+} else {
+    ?>
         <div class="food-header2">
             <h1 class="h-primary">No Items Found:(</h1>
         </div>
 
         <?php
-                        }
+}
 
-                        ?>
+?>
 
     </section>
     <div class="header-right">
@@ -209,5 +207,5 @@ $result = display();
 
 
 </html>
-<?php include('footer.php');
+<?php include 'footer.php';
 ?>

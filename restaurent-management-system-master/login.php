@@ -71,7 +71,6 @@
                 <button type="submit" class="btn login-btn" name="send-reset-link">Send Link</button>
             </div>
         </form>
-
     </div>
 </div>
 

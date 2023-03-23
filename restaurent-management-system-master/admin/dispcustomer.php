@@ -43,7 +43,12 @@ table {
     width: 10%;
 }
 </style>
+<?php
 
+include '../bootstrap.php';
+include_once "connect.php";
+include 'header.php';
+?>
 <body>
 
         <div class="table-responsive">
@@ -61,46 +66,37 @@ table {
                     <th>Mobile No</th>
                     <th>Adhar Card No</th>
                     <th>Status</th>
-                    <th>delete operation</th>       
+                    <th>delete operation</th>
 
                 </tr>
                 <?php
 
-                  include('../bootstrap.php');
-                  include_once "connect.php";
-                  include('header.php');
+function delete($id)
+{
+    $conn = connection();
+    $str = "delete from registered_users where id=$id";
+    $conn->query($str);
+    $conn->close();
 
-                  function delete($id)
-                  {
-                      $conn=connection();
-                          $str="delete from registered_users where id=$id";
-                          $conn->query($str);
-                          $conn->close();
-                          
-                  }
+}
 
-                  if(isset($_GET['fid']))//code for delete
-                  {
-                      delete($_GET['fid']);
-                  }
+if (isset($_GET['fid'])) {
+    delete($_GET['fid']);
+}
 
+function display()
+{
+    $conn = connection();
+    $str = "select * from registered_users";
+    $result = $conn->query($str);
+    $conn->close();
+    return $result;
+}
 
-                  function display()
-                  {
-                      $conn=connection();
-                      $str="select * from registered_users";
-                      $result=$conn->query($str);
-                      $conn->close();
-                      return $result;
-                  }
-                  
-          
-                    $result=display();
-                    if($result->num_rows>0)
-                    {
-                        while($row = $result->fetch_assoc())
-                        {
-                ?>
+$result = display();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        ?>
                 <tr>
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['username']; ?></td>
@@ -112,25 +108,22 @@ table {
                     <td><?php echo $row['state']; ?></td>
                     <td><?php echo $row['mno']; ?></td>
                     <td><?php echo $row['adno']; ?></td>
-                    <td><?php 
-                            if($row['status']==1)
-                            {
-                                echo '<P><a href="status.php?id='.$row['id'].'&status=0">enable</a></P>';
-                            }   
-                            else
-                            {
-                                echo '<P><a href="status.php?id='.$row['id'].'&status=1">disable</a></P>';
-                            }
-                        ?></td>
-                    <td><a href="dispcustomer.php?fid=<?php echo $row["id"];?>" ?>delete</a></td>
+                    <td><?php
+if ($row['status'] == 1) {
+            echo '<P><a href="status.php?id=' . $row['id'] . '&status=0">enable</a></P>';
+        } else {
+            echo '<P><a href="status.php?id=' . $row['id'] . '&status=1">disable</a></P>';
+        }
+        ?></td>
+                    <td><a href="dispcustomer.php?fid=<?php echo $row["id"]; ?>" ?>delete</a></td>
 
 
                 </tr>
 
-                <?php 
-                    }
-                        } 
-                ?>
+                <?php
+}
+}
+?>
 
 
             </table>
