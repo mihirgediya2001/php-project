@@ -42,7 +42,7 @@ if (isset($_GET['email']) && isset($_GET['reset_token'])) {
     <div style="margin-top:20px" class=" cardc box-shadow-all">
         <a class="singup">Create new password</a>
         <div class="inputBox1">
-            <input type="text" name="password" value="" required="required">
+            <input type="password" name="password" value="" required="required">
             <span>New Password</span>
         </div>
         <input type="hidden" name="email" value="<?php $emailr?>">

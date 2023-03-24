@@ -22,24 +22,24 @@
 </head>
 
 <?php
-include('dbcon.php');
-include('header.php');
-include('connect.php');
+include 'dbcon.php';
+include 'header.php';
+include 'connect.php';
 // include_once "bootstrap.php";
 // session_start();
+$_SESSION['redirected_page'] = 'cartpayment.php';
+
 
 function find_qty($id)
 {
-    if(isset($_SESSION['qty_array'])){
-        
+    if (isset($_SESSION['qty_array'])) {
+
         $qs = count($_SESSION['qty_array']);
-        
-        for($x=0; $x < $qs; $x++)
-        {
-            if($_SESSION['qty_array'][$x][0] == $id)
-			{
-				return $_SESSION['qty_array'][$x][1]; 
-			}
+
+        for ($x = 0; $x < $qs; $x++) {
+            if ($_SESSION['qty_array'][$x][0] == $id) {
+                return $_SESSION['qty_array'][$x][1];
+            }
         }
     }
 }
@@ -55,18 +55,18 @@ function find_qty($id)
             </div>
 
             <div class="col-sm-8 col-sm-offset-2">
-                <?php 
+                <?php
 
-			if(isset($_SESSION['message'])){
-				?>
+if (isset($_SESSION['message'])) {
+    ?>
                 <div class="alert alert-info text-center">
                     <?php echo $_SESSION['message']; ?>
                 </div>
                 <?php
-				unset($_SESSION['message']);
-			}
+unset($_SESSION['message']);
+}
 
-			?>
+?>
                 <form method="POST" action="cart/save_cart.php">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
@@ -79,46 +79,44 @@ function find_qty($id)
                             </thead>
                             <tbody>
                                 <?php
-						//initialize total
-						$total = 0;
-						if(!empty($_SESSION['cart']))
-                        {
-						//connection
-                            $conn = connection();
-                            //create array of initail qty which is 1
-                            $index = 0;
-                            if(!isset($_SESSION['qty_array'])){
-                                $_SESSION['qty_array'] = array_fill(0, count($_SESSION['cart']), array(1,1));
-                                $cs = count($_SESSION['cart']);
-                                for ($x = 0; $x < $cs; $x++) {
-                                    $_SESSION['qty_array'][$x][0] = $_SESSION['cart'][$x]; 
-                                    $_SESSION['qty_array'][$x][1] = 1; 
-                                }
-                            }
-                            else {
-                                $cs = count($_SESSION['cart']);
-                                $qs = count($_SESSION['qty_array']);
+//initialize total
+$total = 0;
+if (!empty($_SESSION['cart'])) {
+    //connection
+    $conn = connection();
+    //create array of initail qty which is 1
+    $index = 0;
+    if (!isset($_SESSION['qty_array'])) {
+        $_SESSION['qty_array'] = array_fill(0, count($_SESSION['cart']), array(1, 1));
+        $cs = count($_SESSION['cart']);
+        for ($x = 0; $x < $cs; $x++) {
+            $_SESSION['qty_array'][$x][0] = $_SESSION['cart'][$x];
+            $_SESSION['qty_array'][$x][1] = 1;
+        }
+    } else {
+        $cs = count($_SESSION['cart']);
+        $qs = count($_SESSION['qty_array']);
 
-								for ($x = 0; $x < $cs-$qs; $x++) {
-									
-                                    array_push($_SESSION['qty_array'],array(1,1));
-                                }
+        for ($x = 0; $x < $cs - $qs; $x++) {
 
-                                for ($x = $qs; $x < $cs; $x++) {
+            array_push($_SESSION['qty_array'], array(1, 1));
+        }
 
-                                    $_SESSION['qty_array'][$x][0] = $_SESSION['cart'][$x]; 
-                                    $_SESSION['qty_array'][$x][1] = 1; 
+        for ($x = $qs; $x < $cs; $x++) {
 
-                                }
-                            }
-                            $sql = "SELECT * FROM addfood WHERE id IN (".implode(',',$_SESSION['cart']).")";
-                            $query = $conn->query($sql);
-                                while($row = $query->fetch_assoc()){
-                                    ?>
+            $_SESSION['qty_array'][$x][0] = $_SESSION['cart'][$x];
+            $_SESSION['qty_array'][$x][1] = 1;
+
+        }
+    }
+    $sql = "SELECT * FROM addfood WHERE id IN (" . implode(',', $_SESSION['cart']) . ")";
+    $query = $conn->query($sql);
+    while ($row = $query->fetch_assoc()) {
+        ?>
                                 <tr>
                                     <td>
                                         <div class="delete-btn">
-                                            <a href=" cart/delete_item.php?id=<?php echo $row['id']?>"
+                                            <a href=" cart/delete_item.php?id=<?php echo $row['id'] ?>"
                                                 class=" btn box-shadow-all btn-outline-danger btn-sm">
                                                 <i class="fa fa-trash-o"></i></a>
                                         </div>
@@ -130,22 +128,21 @@ function find_qty($id)
                                             value="<?php echo find_qty($row['id']); ?>"
                                             name="qty_<?php echo $row['id']; ?>">
                                     </td>
-                                    <td><?php echo number_format(find_qty($row['id'])*$row['price'], 2); ?></td>
-                                    <?php $total += find_qty($row['id'])*$row['price']; ?>
+                                    <td><?php echo number_format(find_qty($row['id']) * $row['price'], 2); ?></td>
+                                    <?php $total += find_qty($row['id']) * $row['price'];?>
                                 </tr>
                                 <?php
-                                    $index++;
-							}
-						}
-						else{
-							?>
+$index++;
+    }
+} else {
+    ?>
                                 <tr>
                                     <td colspan="5" class="text-center">No Item in Cart</td>
                                 </tr>
                                 <?php
-						}
+}
 
-					?>
+?>
                                 <tr>
                                     <td colspan="4" align="right"><b>Total</b></td>
                                     <td><b><?php echo number_format($total, 2); ?></b></td>
@@ -166,8 +163,8 @@ function find_qty($id)
                             Clear Cart
                         </button>
                         <div class="four">
-                            <form action="cartpayment.php" method="POST">
-                                <a href="cartpayment.php" class="btn btn-outline-success box-shadow-all">
+                            <form action="checklogin.php" method="POST">
+                                <a href="checklogin.php" class="btn btn-outline-success box-shadow-all">
                                     <i class="fa fa-check"></i>
                                     Checkout
                                 </a>
@@ -200,11 +197,12 @@ function find_qty($id)
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
 
 
 
-<?php include('footer.php');
+<?php include 'footer.php';
 ?>

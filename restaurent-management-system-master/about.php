@@ -1,6 +1,6 @@
 <?php
-include('dbcon.php');
-include('header.php');
+include 'dbcon.php';
+include 'header.php';
 ?>
 
 <html>
@@ -58,7 +58,7 @@ include('header.php');
 
     <section class="container speciality-class box-shadow-all">
         <h1 class="h-primary center">Our Services</h1>
-        <div class="row" id="services">
+        <div class="row-data" id="services">
             <div class=" box box-shadow-all">
                 <img class="card-img box-shadow-all" src="img/deluxroom.jpg" alt="manchurion">
                 <h2 class="h-secondary center"><a href="room.php">Rooms</a></h2>
@@ -126,6 +126,6 @@ include('header.php');
 </html>
 
 <?php
-include('footer.php'); ?>
+include 'footer.php';?>
 
 <!-- TODO -->

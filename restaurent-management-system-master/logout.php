@@ -9,7 +9,7 @@ $lastPageName = substr($_SERVER["HTTP_REFERER"], strrpos($_SERVER["HTTP_REFERER"
 // echo "The current page name is: " . $curPageName;
 // echo "</br>";
 
-header("location:" . $lastPageName);
+header("location:index.php");
 
 
 ?>
