@@ -40,8 +40,6 @@
 
 	unset($_SESSION['qty_array'][find_index($_GET['id'])]);
 
-    print_r($_SESSION['qty_array']);
-    print_r($_SESSION['cart']);
     
 	$_SESSION['cart'] = array_values($_SESSION['cart']);
 	//rearrange array after unset

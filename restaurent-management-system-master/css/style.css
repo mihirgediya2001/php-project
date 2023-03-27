@@ -95,6 +95,52 @@
 }
 
 /* food */
+
+.bill-details {
+    border-radius: 0.25rem;
+    margin: 20px;
+    padding: 20px 20px;
+}
+
+.key,
+.value {
+    display: inline-block;
+    margin: 0.5rem 0rem;
+}
+
+.key {
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+.value {
+    padding-right: 40px;
+}
+
+.order-details {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@media (max-width: 700px) {
+    .order-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .key {
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+    .value {
+        padding-right: 10px;
+    }
+}
 .h-primary {
     font-size: 2.8rem;
     padding: 12px;
@@ -102,7 +148,7 @@
     text-align: center;
 }
 .h-secondary {
-    font-size: 2.7vw;
+    font-size: 2rem;
     padding: 12px;
     font-family: 'Crete Round', serif;
     text-align: center;
@@ -801,13 +847,14 @@ table tr td input {
     font-style: italic;
     font-size: 18px;
     background-color: black;
-
+    color: white;
     border: 1px solid white;
 }
 
 #book-btn:hover {
     background-color: white;
     border: 1px solid black;
+    color: black;
 }
 #book-btn a {
     color: white !important;
@@ -873,13 +920,13 @@ table tr td input {
         width: 90%;
     }
 }
-
+.inputBoxf,
 .inputBox,
 .inputBox1 {
     position: relative;
     width: 250px;
 }
-
+.inputBoxf input,
 .inputBox input,
 .inputBox1 input {
     width: 100%;
@@ -897,6 +944,7 @@ table tr td input {
     border-bottom-right-radius: 8px;
 }
 
+.inputBoxf span,
 .inputBox span,
 .inputBox1 span {
     margin-top: 5px;
@@ -925,6 +973,7 @@ table tr td input {
     border: 2px;
 }
 
+.inputBoxf input,
 .inputBox1 input:valid ~ span,
 .inputBox1 input:focus ~ span {
     transform: translateX(156px) translateY(-15px);
@@ -936,6 +985,7 @@ table tr td input {
     border: 2px;
 }
 
+.inputBoxf input,
 .inputBox input:valid,
 .inputBox input:focus,
 .inputBox1 input:valid,
@@ -1495,6 +1545,199 @@ footer .bottom-details .bottom_text {
     }
 }
 
+/* credit card */
+.container-cc {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+    text-transform: uppercase;
+}
+
+.container-cc form {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 600px;
+    padding-top: 160px;
+}
+
+@media (max-width: 550px) {
+    .container-cc form {
+        width: 450px;
+    }
+}
+
+@media (max-width: 450px) {
+    .container-cc .card-container-cc {
+        width: 350px !important;
+    }
+
+    .container-cc form {
+        width: 400px;
+    }
+    .container-cc form .flexbox-cc {
+        display: flex;
+        gap: 0px !important;
+        flex-direction: column;
+    }
+
+    .container-cc form .flexbox-cc .inputBox-cc {
+        flex: 1 1 !important;
+    }
+}
+
+.container-cc form .inputbox-cc {
+    margin-top: 20px;
+}
+
+.container-cc form .inputBox-cc span {
+    display: block;
+    color: #999;
+    padding-bottom: 5px;
+}
+
+.container-cc form .inputBox-cc input,
+.container-cc form .inputBox-cc select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: #444;
+}
+
+.container-cc form .flexbox-cc {
+    display: flex;
+    gap: 15px;
+}
+
+.container-cc form .flexbox-cc .inputBox-cc {
+    flex: 1 1 150px;
+}
+
+.container-cc form .submit-btn {
+    width: 100%;
+    background: linear-gradient(45deg, blueviolet, deeppink);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.container-cc form .submit-btn:hover {
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.container-cc .card-container-cc {
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+
+.container-cc .card-container-cc .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, blueviolet, deeppink);
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.4s ease-out;
+}
+
+.container-cc .card-container-cc .front .image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.container-cc .card-container-cc .front .image img {
+    height: 50px;
+}
+
+.container-cc .card-container-cc .front .card-number-box-cc {
+    padding: 30px 0;
+    font-size: 22px;
+    color: #fff;
+}
+
+.card-holder-input {
+    text-transform: uppercase;
+}
+
+.container-cc .card-container-cc .front .flexbox-cc {
+    display: flex;
+}
+
+.container-cc .card-container-cc .front .flexbox-cc .box-cc:nth-child(1) {
+    margin-right: auto;
+}
+
+.container-cc .card-container-cc .front .flexbox-cc .box-cc {
+    font-size: 15px;
+    color: #fff;
+}
+
+.container-cc .card-container-cc .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, blueviolet, deeppink);
+    border-radius: 5px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(180deg);
+    transition: transform 0.4s ease-out;
+}
+
+.container-cc .card-container-cc .back .stripe {
+    background: #000;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.container-cc .card-container-cc .back .box-cc {
+    padding: 0 20px;
+}
+
+.container-cc .card-container-cc .back .box-cc span {
+    color: #fff;
+    font-size: 15px;
+}
+
+.container-cc .card-container-cc .back .box-cc .cvv-box-cc {
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    color: #333;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.container-cc .card-container-cc .back .box-cc img {
+    margin-top: 30px;
+    height: 30px;
+}
+
 /* .table {
     text-align: center;
 }
@@ -1544,3 +1787,106 @@ footer .bottom-details .bottom_text {
     background-color: tomato;
     border-radius: 8px;
 } */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.title {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.title h3 {
+    font-weight: bold;
+}
+.title p {
+    font-size: 12px;
+    color: #118a44;
+}
+.title .msg {
+    color: initial;
+    text-align: initial;
+    font-weight: bold;
+}
+
+.otp-input-fields {
+    margin: auto;
+    background-color: white;
+    max-width: 400px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px;
+}
+.otp-input-fields input {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #2f8f1f;
+    text-align: center;
+    outline: none;
+    font-size: 16px;
+}
+
+.otp-input-fields input:focus {
+    border-width: 2px;
+    border-color: darken(#2f8f1f, 5%);
+    font-size: 20px;
+}
+
+.otp-form {
+    padding: 20px;
+}
+
+.check-btn {
+    height: 50px;
+    width: max-content;
+    padding-top: auto;
+    padding-left: 13px;
+    padding-bottom: auto;
+    padding-right: 13px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.check-btn:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.result {
+    max-width: 400px;
+    margin: auto;
+    padding: 24px;
+    text-align: center;
+}
+.result p {
+    font-size: 24px;
+    font-family: 'Antonio', sans-serif;
+    opacity: 1;
+    transition: color 0.5s ease;
+}
+.result ._ok {
+    color: green;
+}
+.result ._notok {
+    color: red;
+    border-radius: 3px;
+}
