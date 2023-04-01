@@ -117,45 +117,6 @@ $emailid = $_SESSION['email'];
             </div>
         </div>
     </div>
-    <!-- <form method="POST">
-        <div style="margin-top:20px" class="cardc box-shadow-all">
-            <a class="singup">Give your details</a>
-            
-            <div class="inputBox1">
-                <input type="text" name="phone" value="" required="required">
-                <span>Phone Number</span>
-            </div>
-            <div class="inputBox1">
-                <input type="text" name="address" value="" required="required">
-                <span>Address</span>
-            </div>
-
-            <button id="submit" type="submit" name="purchase" class="enter">Purchase</button>
-
-        </div>
-    </form> -->
-
-    <!-- <div id='image-payment'>
-        <form action='' method='POST'>
-            <div class='form-input-container'>
-                <div class='form-group'>
-                    <label>Full Name</label>
-                    <input type='text' name='fullname' class='form-control' required>
-                </div>
-                <div class='form-group'>
-                    <label>Phone No</label>
-                    <input type='number' name='phone' class='form-control' required>
-                </div>
-                <div class='form-group'>
-                    <label>Your Address</label>
-                    <input type='text' name='address' class='form-control' required>
-                </div>
-
-                <button class='cart-btn' name='purchase'>Make Purchase</button>
-            </div>
-        </form>
-    </div> -->
-
 </body>
 
 <script>
@@ -208,11 +169,12 @@ if (isset($_POST['otp'])) {
     // var_dump($_SESSION['session_otp']);
     // var_dump($_POST['otp-number']);
 
+
     if ($_SESSION['session_otp'] == $_POST['otp-number']) {
         echo "<script>
         $('#successotp').modal('show');
         $('#successotp').on('hidden.bs.modal', function (e) {
-        window.location.href='print_bill.php';
+        window.location.href='$_SESSION[bill]';
             
             
           })

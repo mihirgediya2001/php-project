@@ -31,6 +31,8 @@ $_SESSION['redirected_page'] = 'cartpayment2.php';
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 }
+$_SESSION['bill'] = 'print_bill.php';
+
 
 function find_qty($id)
 {

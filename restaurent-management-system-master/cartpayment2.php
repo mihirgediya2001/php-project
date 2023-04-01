@@ -27,23 +27,6 @@ include 'dbcon.php';
 </head>
 
 <body>
-    <!-- <div class="img">
-        <img src="img/paytm.png" alt="paytm">
-        <img src="img/hdfc.jpg" alt="hdfc">
-    </div> -->
-    <!-- <div class="payment-container">
-        <h1 class="payment-h1">Enter Details</h1>
-<form action="" method="post">
-          <div class="form-payment">
-                <label >Card Number</label>
-                <input type="number" name="cardno" class="form-control" required>
-           </div>
-          <div class="form-payment">
-                <label >CVV Number</label>
-               <input type="number" name="cvv" class="form-control" max-length="3" required>
-          </div>
-          
-          <button class="payment-btn" name="card-purchase">Proceed For Further Details</button> -->
 
     <div class="container-cc">
 
@@ -63,8 +46,7 @@ include 'dbcon.php';
                     <div class="box-cc">
                         <span>expires</span>
                         <div class="expiration">
-                            <span class="exp-month">mm</span>
-                            <span class="exp-year">yy</span>
+                            <span class="exp-month">mm</span> / <span class="exp-year">yy</span>
                         </div>
                     </div>
                 </div>

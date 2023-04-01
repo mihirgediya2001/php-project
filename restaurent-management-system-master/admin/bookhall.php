@@ -15,70 +15,7 @@
     <link rel="stylesheet" href="stylee.css">
     <link rel="stylesheet" href="bootstrap-4.3.1-dist\css\bootstrap.min">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap" rel="stylesheet">
-    <style>
-    body::before {
-        position: absolute;
-        content: "";
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        opacity: 0.89;
-        object-fit: cover;
-        background: url('../img/hall4.webp') center center/cover no-repeat;
-    }
-
-    h1 {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .delux-insert {
-        height: 230px;
-        width: 400px;
-        border-radius: 10px;
-        /* background-color:#a68383; */
-        margin-top: -10px;
-        margin-left: 38%;
-
-    }
-
-    .delux-insert form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 30px;
-    }
-
-    .delux-insert form table tr td input {
-        padding: 4px 0;
-        margin-bottom: 10px;
-        border-radius: 8px;
-        padding-left: 10px;
-    }
-
-    .delux-insert form table tr td {
-        font-size: 20px;
-    }
-
-    #delux-btn {
-        width: 80%;
-        background-color: #cdb1e5;
-        font-size: 16px;
-    }
-
-    .imgg {
-        display: flex;
-        justify-content: space-evenly;
-        /* justify-content:center; */
-        margin-top: 10px;
-    }
-
-    img {
-        width: 350px;
-        /* margin-left: 100px; */
-    }
-    </style>
+    
 </head>
 
 <body><?php
